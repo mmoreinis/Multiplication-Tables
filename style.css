@@ -1,0 +1,35 @@
+body {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+.standard {
+  text-align:center;
+  padding:10px;
+}
+
+.standard h1 {
+  background-color:#2980b9;
+  border-radius: 5px;
+}
+
+.standard button {
+  background-color:lightcoral;
+  border-radius: 25px;
+  border:#fff;
+}
+
+.standard button:hover {
+  background-color:crimson;
+  color:white;
+}
+
+.fifty {
+  width:100px;
+  display:modified-block;
+}
+
+ol {
+  width:200px;
+  margin:0 auto;
+  padding:10px 10px 25px 50px;
+  text-align:left;
+}
