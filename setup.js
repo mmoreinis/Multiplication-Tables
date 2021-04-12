@@ -14,7 +14,7 @@ function setMode(mode){
   }
 }
 
-
 function setFactors(level){
   alert("Level is: "+level);
+  window.location.href = "mode.html";
 }
