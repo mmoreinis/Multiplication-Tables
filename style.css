@@ -6,6 +6,15 @@ body {
   padding:10px;
 }
 
+#stats {
+  position: absolute;
+  right:0;
+  bottom:0;
+  height:100px;
+  width:100px;
+  border:1px solid red;
+}
+
 .standard h1 {
   background-color:#2980b9;
   border-radius: 5px;
@@ -14,6 +23,7 @@ body {
 .standard button {
   background-color:lightcoral;
   border-radius: 25px;
+  padding:5px;
   border:#fff;
 }
 
