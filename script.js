@@ -1,7 +1,7 @@
 /* Multiplication Master Code */
 
 function start(){
-  setMode();
+  setup();
 }
 
 function questionMaker(){

@@ -13,8 +13,17 @@ function setMode(mode){
     alert("You had "+ m + " mistakes.");
   }
 }
-
-function setFactors(level){
-  alert("Level is: "+level);
+function factorsMenu(){
+  var factorsMenu = "Choose difficulty:\n";
+  factorsMenu += "1 = easy (3-6)\n";
+  factorsMenu += "2 = standard (3-9)\n";
+  factorsMenu += "3 = hard (6-9)\n";
+  factorsMenu += "4 = custom (6-9)\n";
+  factors=prompt(factorsMenu);
+  setFactors(factors);
   window.location.href = "mode.html";
+}
+
+function setFactors(factors){
+  alert("Factors set to level "+factors);
 }
