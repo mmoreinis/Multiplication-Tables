@@ -14,7 +14,7 @@ function setLoop(mode){
     (mode==2) {
     alert("How few mistakes can you make in "+loopQuestions+" questions?");
     mistakes = forLoop();
-    alert("You had "+ mistakes + " mistakes.");
+    alert("You had "+ mistakes + " mistakes.");set
   }
   else if (mode ==3){
     alert("Customize it!");
