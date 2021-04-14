@@ -11,13 +11,19 @@
     }
     </style>
   </head>
-  <body>
+  <body onload = "mistakes()">
     <script src="../script.js"></script>
     <script src="../scripts/setup.js"></script>
+    <script src="../scripts/mistakes.js"></script>
     <!-- other script links go here -->
-    <div class = "container">
+    <div class="container">
       <div class="standard">
-        <!-- new HTML content goes here -->
+        <h1>Performance Report</h1>
+        <h3>In the box below, see the mistakes you made. Click "Tables" to study any times tables that you have difficulty with.</h3>
+        <button>Tables</button>
+      </div>
+      <div id="stats">
+        <p>Mistakes this round:</p>
       </div>
     </div>
   </body>

@@ -1,19 +1,46 @@
 body {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
 }
+
+.container {
+  background-image: url("https://i.pinimg.com/originals/aa/e0/a0/aae0a0446497e11392e8596b46908e36.gif");
+  width:500px;
+  text-align:center;
+  background-repeat:no-repeat;
+  margin:0 auto;
+}
+  
 .standard {
+  width:500px;
+  height:341px;
   text-align:center;
   padding:10px;
+  background-color:#fff;
+  opacity: 0.7;
+  margin:20px auto;
+  margin-left:-9px;
+  margin-top:-20px;
 }
 
 #stats {
-  position: absolute;
-  right:0;
-  bottom:0;
-  height:100px;
+  padding:10px;
+  vertical-align: baseline;
+  background-color:#000;
+  opacity: 0.7;
+  color:white;
   width:100px;
-  border:1px solid red;
+  min-height:100px;
+  text-align:center;
+  display:table;
+  border:5px groove gray;
+  margin:0 auto;
 }
+
+#stats p {
+      display:table-cell;
+      vertical-align:middle;
+      height:1em;
+    }
 
 .standard h1 {
   background-color:#2980b9;
@@ -23,8 +50,9 @@ body {
 .standard button {
   background-color:lightcoral;
   border-radius: 25px;
-  padding:5px;
+  padding:5px 10px;
   border:#fff;
+  font-size:14pt;
 }
 
 .standard button:hover {
@@ -32,14 +60,28 @@ body {
   color:white;
 }
 
-.fifty {
-  width:100px;
-  display:modified-block;
-}
-
 ol {
   width:200px;
   margin:0 auto;
   padding:10px 10px 25px 50px;
   text-align:left;
+}
+
+#specialbox {
+  vertical-align: baseline;
+  background-color:#000;
+  opacity: 0.7;
+  color:white;
+  width:200px;
+  height:100px;
+  text-align:center;
+  display:table;
+  border:5px groove gray;
+  margin:0 auto;
+}
+
+#specialbox p {
+  display:table-cell;
+  vertical-align:middle;
+  height:1em;
 }

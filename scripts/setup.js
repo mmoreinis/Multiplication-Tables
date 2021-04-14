@@ -1,6 +1,6 @@
 
 function setDifficulty(level){
-  alert("Difficulty level set to "+level);
+  // alert("Difficulty level set to "+level);
   if (level == 1){
     lowFactor = 2;
     highFactor = 6;
@@ -22,7 +22,7 @@ function setDifficulty(level){
 
 
 function setLoop(mode){
-  alert("Practice mode set to mode "+mode);
+  // alert("Practice mode set to mode "+mode);
   if (mode ==1){
     alert("How fast can you get "+whileQuestions+" right?");
     mistakes = whileLoop();

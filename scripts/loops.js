@@ -2,7 +2,7 @@
 function questionMaker(){
   let lowFactor = parseInt(localStorage.getItem("lowFactor"));
   let highFactor = parseInt(localStorage.getItem("highFactor"));
-  alert("High factor = "+highFactor);
+  // alert("High factor = "+highFactor);
   x = Math.floor(Math.random()*(highFactor-lowFactor+1))+lowFactor;
   y = Math.floor(Math.random()*(highFactor-lowFactor+1))+lowFactor;
   solution = x * y;
