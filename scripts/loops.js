@@ -1,11 +1,12 @@
 /* Loop Functions */
-
-page = "question";
 function questionMaker(){
+  let lowFactor = parseInt(localStorage.getItem("lowFactor"));
+  let highFactor = parseInt(localStorage.getItem("highFactor"));
+  alert("High factor = "+highFactor);
   x = Math.floor(Math.random()*(highFactor-lowFactor+1))+lowFactor;
   y = Math.floor(Math.random()*(highFactor-lowFactor+1))+lowFactor;
+  solution = x * y;
 }
-
 
   /* q Problems, tells answer or correct + # left 
   * + m mistakes made */
@@ -13,9 +14,9 @@ function forLoop(){
   var mistakes = 0;
   for(question = 1;question <= loopQuestions; question++){
     questionMaker();
-    while (answer != x*y) {
+    while (answer != solution) {
       answer = prompt("What is "+x+" * "+y+"?");
-      if (answer != x*y) {
+      if (answer != solution) {
         alert("Wrong!");
         mistakes ++;
       }
@@ -35,7 +36,7 @@ function whileLoop(){
   while(question <= whileQuestions){
       questionMaker();
       answer = prompt("What is "+x+" * "+y+"?");
-      if (answer != x*y) {
+      if (answer != solution) {
         alert("Wrong!");
         mistakes ++;
       }

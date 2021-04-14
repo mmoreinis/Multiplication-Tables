@@ -1,10 +1,28 @@
+
 function setDifficulty(level){
-  page = "difficulty";
-  alert("Factors set to level "+factors);
+  alert("Difficulty level set to "+level);
+  if (level == 1){
+    lowFactor = 2;
+    highFactor = 6;
+  }
+   else if (level == 2){
+    lowFactor = 2;
+    highFactor = 9;
+ } 
+ else if (level == 3){
+    lowFactor = 6;
+    highFactor = 9;
+ } 
+ else if (level == 4){
+    alert("custom");
+ } 
+  localStorage.setItem("lowFactor", lowFactor);
+  localStorage.setItem("highFactor", highFactor);
 }
 
+
 function setLoop(mode){
-  page = "looptype";
+  alert("Practice mode set to mode "+mode);
   if (mode ==1){
     alert("How fast can you get "+whileQuestions+" right?");
     mistakes = whileLoop();
