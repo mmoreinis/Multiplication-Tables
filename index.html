@@ -5,38 +5,19 @@
     <meta name="viewport" content="width=device-width">
     <title>Lyceum Multiplication Master</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <style>
-    .container {
-      background-image: url("https://i.pinimg.com/originals/aa/e0/a0/aae0a0446497e11392e8596b46908e36.gif");
-    }
-    </style>
   </head>
   <body>
     <!--http://btheb.com/multiply/multiply-music.mp3-->
     <div id = "audio">
-    <audio controls autoplay muted>
+    <audio  controls autoplay muted>
       <source src="http://btheb.com/multiply/multiply-music.mp3" type="audio/ogg">
-      <source src="http://btheb.com/multiply/multiply-music.mp3" type="audio/mpeg">
+      <source id="my_audio" src="http://btheb.com/multiply/multiply-music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
     <div id="credits">
       <p>Audio by Music and Video Production STEAM Class. Code and Design by Computer Science STEAM Class. </p>
     </div>
-    <script src="script.js"></script>
-    <script src="scripts/tables.js"></script>
-    <div class="container">
-      <div class="standard">
-        <h1>Welcome</h1>
-        <h3>Stay a while and learn your multiplication tables. Practice makes perfect. Good luck!</h3>
-        <a href = "pages/difficulty.html"><button>Test Yourself</button></a>
-        <a href = "pages/tables.html"><button>Study Tables</button></a>
-    </div>
-  </div>
-  <script type="text/javascript">
-  /* window.onload = function() {
-    document.getElementById("my_audio").play();
-    }
-    */
-  </script>
+    <iframe src="pages/home.html" width="100%" height="1000" style="border:none;">
+</iframe>
 </body>
 </html>

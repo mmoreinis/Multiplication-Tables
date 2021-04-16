@@ -3,7 +3,7 @@ body {
 }
 #credits {
   text-align:center;
-  height:30px;
+  height:10px;
   z-index: 100;
 }
 
@@ -14,7 +14,7 @@ body {
 #audio {
   margin:0 auto;
   text-align:center;
-  height:50px;
+  height:30px;
   margin-bottom:10px;
 }
 .container {
