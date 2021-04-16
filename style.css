@@ -1,7 +1,16 @@
 body {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
 }
+#credits {
+  text-align:center;
+  height:30px;
+  z-index: 100;
+}
 
+#credits p {
+  font-size:8px;
+  font-style: italic;
+}
 #audio {
   margin:0 auto;
   text-align:center;
