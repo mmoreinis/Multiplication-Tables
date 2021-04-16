@@ -12,6 +12,8 @@
     </style>
   </head>
   <body>
+    <!--http://btheb.com/multiply/multiply-music.mp3-->
+    <audio id="my_audio" src="http://btheb.com/multiply/multiply-music.mp3" loop="loop"></audio>
     <script src="script.js"></script>
     <script src="scripts/tables.js"></script>
     <div class="container">
@@ -22,5 +24,10 @@
         <a href = "pages/tables.html"><button>Study Tables</button></a>
     </div>
   </div>
+  <script type="text/javascript">
+  window.onload = function() {
+    document.getElementById("my_audio").play();
+    }
+  </script>
 </body>
 </html>
