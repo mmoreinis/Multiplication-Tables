@@ -2,8 +2,8 @@
 
 /* Global Variables */
 
-var loopQuestions = 5;
-var whileQuestions = 2;
+var loopQuestions = 25;
+var whileQuestions = 10;
 var answer = 0;
 var factors = [0.0]
 var mistakeList = [];
