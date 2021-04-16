@@ -18,6 +18,7 @@ function mistakesReport(){
     statBox.style.height = "300px";
     statBox.style.width = "500px";
     statBox.style.fontSize = "24pt";
+    statBox.style.fontColor = "black";
     statBox.style.opacity = "1";
     statBox.style.backgroundColor="white";
     // https://acegif.com/wp-content/gif/confetti-25.gif
