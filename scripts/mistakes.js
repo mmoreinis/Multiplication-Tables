@@ -13,7 +13,13 @@ function mistakesReport(){
     }
   }
   else {
-    report = "You had ZERO mistakes! ROCK ON, Spartan!";
+    statBox.style.backgroundImage = "url('https://acegif.com/wp-content/gif/confetti-25.gif')";
+    report = "<br /><br />You had ZERO mistakes! ROCK ON, Spartan!";
+    statBox.style.height = "300px";
+    statBox.style.width = "500px";
+    statBox.style.fontSize = "24pt";
+    // https://acegif.com/wp-content/gif/confetti-25.gif
+ 
   }
   statBox.innerHTML = report;
 }
