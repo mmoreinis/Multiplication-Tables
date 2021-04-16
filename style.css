@@ -62,6 +62,9 @@ body {
   border-radius: 5px;
 }
 
+.standard h3, .standard li {
+  font-weight:bold;
+}
 .standard button {
   background-color:lightcoral;
   border-radius: 25px;
