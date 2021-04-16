@@ -14,7 +14,8 @@ function setDifficulty(level){
     highFactor = 9;
  } 
  else if (level == 4){
-    alert("custom");
+    lowFactor = 2;
+    highFactor = 2;
  } 
   localStorage.setItem("lowFactor", lowFactor);
   localStorage.setItem("highFactor", highFactor);
@@ -28,6 +29,7 @@ function setLoop(mode){
     alert("How fast can you get "+whileQuestions+" right?");
     mistakes = whileLoop();
     alert("You had "+ mistakes + " mistakes.");
+    localStorage.setItem("mistakes", mistakes);
     window.location.href = "../pages/mistakes.html";
     }
   else if 
@@ -35,12 +37,16 @@ function setLoop(mode){
     alert("How few mistakes can you make in "+loopQuestions+" questions?");
     mistakes = forLoop();
     alert("You had "+ mistakes + " mistakes.");
+    localStorage.setItem("mistakes", mistakes);
     window.location.href = "../pages/mistakes.html";
   }
   else if (mode ==3){
-    alert("Customize it!");
+    whileQuestions = 2;
+    alert("How fast can you get "+whileQuestions+" right?");
     mistakes = whileLoop();
     alert("You had "+ mistakes + " mistakes.");
+    localStorage.setItem("mistakes", mistakes);
     window.location.href = "../pages/mistakes.html";
+    // window.location.href = "../pages/mistakes.html";
   }
 }

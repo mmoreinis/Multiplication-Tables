@@ -15,3 +15,4 @@ var lowFactor = 2;
 var highFactor = 9;
 var mistakes=0;
 localStorage.setItem("tableBody", "");
+localStorage.setItem("mistakes", 0);
