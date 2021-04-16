@@ -2,6 +2,12 @@ body {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
 }
 
+#audio {
+  margin:0 auto;
+  text-align:center;
+  height:50px;
+  margin-bottom:10px;
+}
 .container {
   background-image: url("https://i.pinimg.com/originals/aa/e0/a0/aae0a0446497e11392e8596b46908e36.gif");
   width:500px;
