@@ -17,7 +17,8 @@ function forLoop(){
     while (answer != solution) {
       answer = prompt("What is "+x+" * "+y+"?");
       if (answer != solution) {
-        alert("Wrong!");
+        alert(answer + " is incorrect.");
+        mistakeRecorder();
         mistakes ++;
       }
       else {
@@ -37,7 +38,8 @@ function whileLoop(){
       questionMaker();
       answer = prompt("What is "+x+" * "+y+"?");
       if (answer != solution) {
-        alert("Wrong!");
+        alert(answer + " is incorrect.");
+        mistakeRecorder();
         mistakes ++;
       }
       else {
@@ -47,4 +49,11 @@ function whileLoop(){
       }
   }
   return mistakes;
+}
+
+function mistakeRecorder(){
+  var mistakeList = JSON.parse(localStorage.getItem("mistakeList"));
+  mistakeList.push([x,y]);
+  //alert(mistakeList);
+  localStorage.setItem("mistakeList", JSON.stringify(mistakeList));
 }

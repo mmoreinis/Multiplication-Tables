@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Page Title</title>
+    <title>Tables</title>
     <link href="../style.css" rel="stylesheet" type="text/css" />
     <style>
     .container {
@@ -14,24 +14,29 @@
     .standard{
       width:602px;
       height:536px;
+      text-align:center;
+    }
+    .standard h3 {
+      width:400px;
+      margin:0 auto 20px auto;
     }
     #stats {
       margin-bottom:20px;
     }
     </style>
   </head>
-  <body onload = "mistakesReport()">
-    <script src="../scripts/mistakes.js"></script>
+  <body onload = "tableMaker(0)">
+    <script src="../script.js"></script>
+    <script src="../scripts/tables.js"></script>
     <div class="container">
       <div class="standard">
-        <h1>Performance Report</h1>
-        <h3>In the box below, see the mistakes you made. Click "Tables" to study any times tables that you have difficulty with.</h3>
+        <h1 id="tableHeader">Times Tables for 7</h1>
+        <h3>Click the Load Table button to choose a new factor to display the times table for.</h3>
         <div id="stats">
-          <p>Mistakes this round:</p>
+          <p>No Table Selected</p>
         </div>
-        <button onclick="tablesButton(4)">Tables</button>
+        <button onclick = "tableMaker(0)">Load Table</button>
       </div>
-
     </div>
   </body>
 </html>
