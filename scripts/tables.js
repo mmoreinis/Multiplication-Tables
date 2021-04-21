@@ -64,7 +64,7 @@ function tableMaker(newTable){
     tableBody += table+" * "+factor+" = "+table*factor+"<br />";
   }
   var customMessage = document.getElementById("customMessage");
-  customMessage.innerHTML = "We recommend you study the <span style=\"color:green;\">"+ table +" times table</span> based on your previous errors.";
+  customMessage.innerHTML = "We recommend you study the <span style=\"color:green;\">"+ table +" times table below</span> based on your previous errors.";
   var statBox = document.getElementById("stats");
   statBox.innerHTML = tableBody;
   localStorage.setItem("oldTable", 0);
