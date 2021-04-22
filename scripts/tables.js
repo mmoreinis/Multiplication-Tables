@@ -1,29 +1,29 @@
 /* Get FactorList */
 // Analyzes mistakes and returns the times table to study
 function getStudyTable() {
-  var mistakes = [[3,4],[3,6],[7,4],[4,6],[6,4],[6,7]];
-  // var mistakes = localStorage.getItem("mistakes");
+  var mistakesList = JSON.parse(localStorage.getItem("mistakeList"));
   var factorList=[];
-  for (var factor = 0; factor < mistakes.length; factor++) {
-    factorList.push(mistakes[factor][0]);
-    factorList.push(mistakes[factor][1]);
+  for (var factor = 0; factor < mistakesList.length; factor++) {
+    factorList.push(mistakesList[factor][0]);
+    factorList.push(mistakesList[factor][1]);
   }
   factorList = factorList.sort();
   factorList = factorList.reverse();
-  var counts = []; // array of counts of items in order
-  var dupes = 0; // number of dupes so far
-  var mostFrequent; // most frequent item
-  var studyTable = findFactor(factorList,counts,dupes);
+  var studyTable = findFactor(factorList);
   return studyTable;
 }
 
 /* StudyList */
 // returns the highst of factors with most duplicates from passed array 
-function findFactor(array,counts,dupes){
+function findFactor(array){
+  var mostFrequent = 11; // most frequent item
+  var counts = []; // array of counts of items in order
+  var dupes = 0; // number of dupes so far
+  var factor = 0; // value of an array item
   // Iterate over all items in array
   for(var item = 0; item < array.length; item++){
     // look at the next item
-    var factor = array[item];
+    factor = array[item];
     // have we counted this factor before? 
     if(counts[factor] == undefined) {
       // count it, so counts[3] will be number of 3s

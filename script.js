@@ -7,7 +7,6 @@ var whileQuestions = 10;
 var answer = 0;
 var factors = [0.0]
 var mistakeList = [];
-localStorage.setItem("mistakeList", JSON.stringify(mistakeList));
 var questionsRight = 0;
 var question = 0; 
 var page = "index";
