@@ -1,52 +1,40 @@
 
-function setDifficulty(level){
-  // alert("Difficulty level set to "+level);
-  if (level == 1){
+function setDifficulty(level) {
+  let lowFactor = 2;
+  let highFactor = 9;
+  if (level == 1) {
     lowFactor = 2;
     highFactor = 6;
   }
-   else if (level == 2){
+  else if (level == 2) {
     lowFactor = 2;
     highFactor = 9;
- } 
- else if (level == 3){
+  }
+  else if (level == 3) {
     lowFactor = 6;
     highFactor = 9;
- } 
- else if (level == 4){
+  }
+  else if (level == 4) {
     lowFactor = 2;
     highFactor = 2;
- } 
+  }
   localStorage.setItem("lowFactor", lowFactor);
   localStorage.setItem("highFactor", highFactor);
-  localStorage.setItem("oldTable", 0);
 }
 
 
-function setLoop(mode){
-  // alert("Practice mode set to mode "+mode);
-  if (mode ==1){
-    alert("How fast can you get "+whileQuestions+" right?");
-    mistakes = whileLoop();
-    alert("You had "+ mistakes + " mistakes.");
-    localStorage.setItem("mistakes", mistakes);
-    window.location.href = "../pages/mistakes.html";
-    }
-  else if 
-    (mode==2) {
-    alert("How few mistakes can you make in "+loopQuestions+" questions?");
-    mistakes = forLoop();
-    alert("You had "+ mistakes + " mistakes.");
-    localStorage.setItem("mistakes", mistakes);
-    window.location.href = "../pages/mistakes.html";
+function setLoop(mode) {
+  let questions = 0;
+  if (mode == 1) {
+    questions = 10;
   }
-  else if (mode ==3){
-    whileQuestions = 2;
-    alert("How fast can you get "+whileQuestions+" right?");
-    mistakes = whileLoop();
-    alert("You had "+ mistakes + " mistakes.");
-    localStorage.setItem("mistakes", mistakes);
-    window.location.href = "../pages/mistakes.html";
-    // window.location.href = "../pages/mistakes.html";
+  else if (mode == 2) {
+    questions = 25;
   }
+  else if (mode == 3) {
+    questions = 2;
+  }
+  localStorage.setItem("mode", mode);
+  localStorage.setItem("questions", questions);
+  window.location.href = "../pages/answer.html";
 }

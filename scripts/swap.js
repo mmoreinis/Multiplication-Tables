@@ -1,17 +1,15 @@
-function mistakesReport() {
-  let mistakeList = JSON.parse(localStorage.getItem("mistakeList"));
-  let mistakes = mistakeList.length;
-  let statBox = document.getElementById("stats");
+let statBox = document.getElementById("stats");
   let report = "";
   if (mistakes > 0) {
-    report += "You had " + mistakes + " mistakes.<br />";
-    report += "You missed: <br /><br />"
-    for (var m = 0; m < mistakes; m++) {
+    report += "You had " + mistakes + " mistakes.<br /><br />";
+    report += "You missed these: <br /><br />"
+    var mistakeList = JSON.parse(localStorage.getItem("mistakeList"));
+    count = mistakeList.length;
+    for (var m = 0; m < count; m++) {
       var x = mistakeList[m][0];
       var y = mistakeList[m][1];
       report += x + " * " + y + " = " + x * y + "<br />";
     }
-    localStorage.setItem("table", 1);
   }
   else {
     statBox.style.backgroundImage = "url('https://acegif.com/wp-content/gif/confetti-25.gif')";
@@ -23,4 +21,3 @@ function mistakesReport() {
     statBox.style.backgroundColor = "white";
   }
   statBox.innerHTML = report;
-}

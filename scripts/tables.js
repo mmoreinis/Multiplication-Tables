@@ -1,27 +1,51 @@
+/* Times Table Maker */
+function tableMaker() {
+  let tableBody = "";
+  let table = parseInt(localStorage.getItem("table"));
+  if (table == 0){
+    table = prompt("Generate table for (1-9)");
+  } 
+  else {
+    table = getStudyTable();
+  }
+  let tableHead = "Times Table for "+table;
+  let tableHeader = document.getElementById("tableHeader");
+  tableHeader.innerHTML = tableHead;
+  for (let factor = 2; factor < 10; factor++) {
+    tableBody += table+" * "+factor+" = "+table*factor+"<br />";
+  }
+  let customMessage = document.getElementById("customMessage");
+  customMessage.innerHTML = "We recommend you study the <span style=\"color:green;\">"+ table +" times table below</span> based on your previous errors.";
+  let statBox = document.getElementById("stats");
+  statBox.innerHTML = tableBody;
+  localStorage.setItem("table", 0);
+}
+
 /* Get FactorList */
 // Analyzes mistakes and returns the times table to study
 function getStudyTable() {
-  var mistakesList = JSON.parse(localStorage.getItem("mistakeList"));
-  var factorList=[];
-  for (var factor = 0; factor < mistakesList.length; factor++) {
-    factorList.push(mistakesList[factor][0]);
-    factorList.push(mistakesList[factor][1]);
+  let mistakeList = JSON.parse(localStorage.getItem("mistakeList"));
+  let factorList=[];
+  for (let factor = 0; factor < mistakeList.length; factor++) {
+    factorList.push(mistakeList[factor][0]);
+    factorList.push(mistakeList[factor][1]);
   }
   factorList = factorList.sort();
   factorList = factorList.reverse();
-  var studyTable = findFactor(factorList);
+  let studyTable = findFactor(factorList);
+  alert("Study Table is "+studyTable);
   return studyTable;
 }
 
 /* StudyList */
 // returns the highst of factors with most duplicates from passed array 
 function findFactor(array){
-  var mostFrequent = 11; // most frequent item
-  var counts = []; // array of counts of items in order
-  var dupes = 0; // number of dupes so far
-  var factor = 0; // value of an array item
+  let mostFrequent = 11; // most frequent item
+  let counts = []; // array of counts of items in order
+  let dupes = 0; // number of dupes so far
+  let factor = 0; // value of an array item
   // Iterate over all items in array
-  for(var item = 0; item < array.length; item++){
+  for(let item = 0; item < array.length; item++){
     // look at the next item
     factor = array[item];
     // have we counted this factor before? 
@@ -40,32 +64,6 @@ function findFactor(array){
     }
   }
   // now that we're cone, we have the highest, most frequent value
+  localStorage.setItem("table", mostFrequent);
   return mostFrequent;
-}
-
-/* Times Table Maker */
-function tableMaker(newTable){
-  var storedTable = localStorage.getItem("oldTable");
-  var tableBody = "";
-  var table = 1;
-  if (newTable == 0 && storedTable == 0){
-    table = prompt("Generate table for (1-9)");
-  } 
-  else if (storedTable == 0) {
-    table = newTable;
-  }
-  else {
-    table = getStudyTable();
-  }
-  var tableHead = "Times Table for "+table;
-  var tableHeader = document.getElementById("tableHeader");
-  tableHeader.innerHTML = tableHead;
-  for (var factor = 2; factor < 10; factor++) {
-    tableBody += table+" * "+factor+" = "+table*factor+"<br />";
-  }
-  var customMessage = document.getElementById("customMessage");
-  customMessage.innerHTML = "We recommend you study the <span style=\"color:green;\">"+ table +" times table below</span> based on your previous errors.";
-  var statBox = document.getElementById("stats");
-  statBox.innerHTML = tableBody;
-  localStorage.setItem("oldTable", 0);
 }
