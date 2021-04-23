@@ -1,60 +1,59 @@
 /* Question Loop */
-function questionLoop() {
-  let mode = parseInt(localStorage.getItem("mode"));
+function firstQuestion() {
+  localStorage.setItem("question", 1);
+  localStorage.setItem("feedback", "Let's go!");
   let mistakeList = [];
   localStorage.setItem("mistakeList", JSON.stringify(mistakeList));
+  let mode = parseInt(localStorage.getItem("mode"));
   if (mode == 2) {
-    forLoop();
+    nextForQuestion();
   }
   else {
-    whileLoop();
+    nextQuestion();
   }
 }
 
-
-/* While Loop Mode 1 or 3 */
-function whileLoop() {
+function nextQuestion() {
   let questions = parseInt(localStorage.getItem("questions"));
-  question = 1;
-  while (question <= questions) {
+  let question = parseInt(localStorage.getItem("question"));
+  if (question > questions) {
+    window.location.href = "../pages/mistakes.html";
+  }
+  else {
+    let questionHeader = document.getElementById("questionHeader");
+    let nextQuestionNumber = (questions+1)-question;
+    questionHeader.innerHTML = nextQuestionNumber + " Left to Get Right!";
     equationMaker();
-    let answer = prompt("What is " + x + " * " + y + "?");
-    let solution = x * y;
+    let feedback = localStorage.getItem("feedback");
+    feedback = "<span class=\"feedback\">"+feedback+"</span><br /><br />";
+    document.getElementById("nextQuestion").innerHTML = feedback+"What is " + x + " * " + y + "?";
+    localStorage.setItem("solution",x * y);
+    document.getElementById("inputBox").value="";
+    document.getElementById("inputBox").focus();
+  }
+}
+
+function checkAnswer(){
+  let answer = document.getElementById("inputBox").value;
+  let solution = parseInt(localStorage.getItem("solution"));
+  answer = parseInt(answer);
+  if (isNaN(answer)) {
+    alert("Answer the question, then press \"Submit Answer\"");
+  }
+  else {
     if (answer != solution) {
-      alert(answer + " is incorrect.");
+      localStorage.setItem("feedback", answer + " is incorrect.");
       mistakeRecorder();
     }
     else {
-      let qLeft = questions - question;
-      alert("Correct! " + qLeft + " left to get right.");
+      localStorage.setItem("feedback", answer + " is correct!");
+      let question = parseInt(localStorage.getItem("question"));
       question++;
+      localStorage.setItem("question", question);
     }
+    nextQuestion();
   }
-  window.location.href = "../pages/mistakes.html";
 }
-
-/* For Loop Mode 2 */
-function forLoop() {
-  let mistakes = 0, x = 0, y = 0;
-  let questions = parseInt(localStorage.getItem("questions"));
-  for (question = 1; question <= questions; question++) {
-    equationMaker();
-    let solution = x * y;
-    while (answer != solution) {
-      answer = prompt("What is " + x + " * " + y + "?");
-      if (answer != solution) {
-        alert(answer + " is incorrect.");
-        mistakeRecorder();
-      }
-      else {
-        let qLeft = loopQuestions - question;
-        alert("Correct! " + qLeft + " left.");
-      }
-    }
-  }
-  window.location.href = "../pages/mistakes.html";
-}
-
 
 /* Make Equation */
 function equationMaker() {
@@ -64,8 +63,6 @@ function equationMaker() {
   x = Math.floor(Math.random() * (highFactor - lowFactor + 1)) + lowFactor;
   y = Math.floor(Math.random() * (highFactor - lowFactor + 1)) + lowFactor;
 }
-
-
 
 function mistakeRecorder() {
   var mistakeList = JSON.parse(localStorage.getItem("mistakeList"));

@@ -6,6 +6,27 @@
     <title>Page Title</title>
     <link href="../style.css" rel="stylesheet" type="text/css" />
     <style>
+    #inputBox {
+      background-color:white;
+      border:2px solid black;
+      height:42px!important;
+      margin:0 auto;
+      padding:10px;
+      font-size:24pt;
+      color:black;
+      text-align:center;
+      display:block;
+      z-index:1000;
+      valign:middle;
+    }  
+    button {
+      display:block;
+      margin:20px auto;
+    }
+    .feedback {
+      color:red;
+      
+    }
     .container {
       background-image: url("https://data.whicdn.com/images/256750028/original.gif");
       width:540px;
@@ -23,16 +44,15 @@
     }
     </style>
   </head>
-  <body>
-    <script src="../scripts/loops.js"></script>
+  <body onload = "firstQuestion()">
     <div class = "container">
       <div class="standard">
-        <h1>Question 3 of 25</h1>
-        <div id="specialbox">
-          <p id = "factors">3 X 5</p>
-          </div>
-        <button onclick = "questionLoop()">Answer Questions</button></a>
+        <h1 id="questionHeader">Waiting for Question</h1>
+        <h3 id="nextQuestion">Next Question Here</h3>
+        <textarea id="inputBox"></textarea> 
+        <button onclick = "checkAnswer()">Submit Answer</button></a>
       </div>
     </div>
+    <script src="../scripts/loops.js"></script>
   </body>
 </html>
