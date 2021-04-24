@@ -29,7 +29,7 @@ function setLoop(mode) {
     questions = 10;
   }
   else if (mode == 2) {
-    questions = 25;
+    questions = 20;
   }
   else if (mode == 3) {
     questions = 2;
