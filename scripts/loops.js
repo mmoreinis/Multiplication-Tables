@@ -4,13 +4,7 @@ function firstQuestion() {
   localStorage.setItem("feedback", "Let's go!");
   let mistakeList = [];
   localStorage.setItem("mistakeList", JSON.stringify(mistakeList));
-  let mode = parseInt(localStorage.getItem("mode"));
-  if (mode == 2) {
-    nextForQuestion();
-  }
-  else {
-    nextQuestion();
-  }
+  nextQuestion();
 }
 
 function nextQuestion() {
@@ -21,15 +15,22 @@ function nextQuestion() {
   }
   else {
     let questionHeader = document.getElementById("questionHeader");
-    let nextQuestionNumber = (questions+1)-question;
-    questionHeader.innerHTML = nextQuestionNumber + " Left to Get Right!";
-    equationMaker();
-    let feedback = localStorage.getItem("feedback");
-    feedback = "<span class=\"feedback\">"+feedback+"</span><br /><br />";
-    document.getElementById("nextQuestion").innerHTML = feedback+"What is " + x + " * " + y + "?";
-    localStorage.setItem("solution",x * y);
-    document.getElementById("inputBox").value="";
-    document.getElementById("inputBox").focus();
+    let mode = parseInt(localStorage.getItem("mode"));
+    if (mode == 2) {
+      let nextQuestionNumber = question;
+      questionHeader.innerHTML = "Question "+ question + " of "+ questions;
+    }
+    else {
+      let nextQuestionNumber = (questions+1)-question;
+      questionHeader.innerHTML = nextQuestionNumber + " Left to Get Right!";
+    }
+  equationMaker();
+  let feedback = localStorage.getItem("feedback");
+  feedback = "<span class=\"feedback\">"+feedback+"</span><br /><br />";
+  document.getElementById("nextQuestion").innerHTML = feedback+"What is " + x + " * " + y + "?";
+  localStorage.setItem("solution",x * y);
+  document.getElementById("inputBox").value="";
+  document.getElementById("inputBox").focus();
   }
 }
 
@@ -39,6 +40,22 @@ function checkAnswer(){
   answer = parseInt(answer);
   if (isNaN(answer)) {
     alert("Answer the question, then press \"Submit Answer\"");
+  }
+  let mode = parseInt(localStorage.getItem("mode"));
+  if (mode == 2) {
+    if (answer != solution) {
+      let feedback = "<span class=\"feedback\">"+ answer + " is incorrect. Try again! </span><br /><br />";
+      document.getElementById("nextQuestion").innerHTML = feedback +"What is " + x + " * " + y + "?";
+      mistakeRecorder();
+      document.getElementById("inputBox").value = "";
+    }
+    else {
+      localStorage.setItem("feedback", answer + " is correct!");
+      let question = parseInt(localStorage.getItem("question"));
+      question++;
+      localStorage.setItem("question", question);
+      nextQuestion();
+    }
   }
   else {
     if (answer != solution) {

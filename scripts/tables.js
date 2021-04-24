@@ -33,7 +33,6 @@ function getStudyTable() {
   factorList = factorList.sort();
   factorList = factorList.reverse();
   let studyTable = findFactor(factorList);
-  alert("Study Table is "+studyTable);
   return studyTable;
 }
 
