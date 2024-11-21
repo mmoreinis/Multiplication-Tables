@@ -24,7 +24,9 @@ function nextQuestion() {
       let nextQuestionNumber = (questions+1)-question;
       questionHeader.innerHTML = nextQuestionNumber + " Left to Get Right!";
     }
-  equationMaker();
+  let factors = equationMaker();
+  let x = factors[0];
+  let y = factors[1];
   let feedback = localStorage.getItem("feedback");
   feedback = "<span class=\"feedback\">"+feedback+"</span><br /><br />";
   document.getElementById("nextQuestion").innerHTML = feedback+"What is " + x + " * " + y + "?";
@@ -77,8 +79,10 @@ function equationMaker() {
   let lowFactor = parseInt(localStorage.getItem("lowFactor"));
   let highFactor = parseInt(localStorage.getItem("highFactor"));
   // alert("High factor = "+highFactor);
-  x = Math.floor(Math.random() * (highFactor - lowFactor + 1)) + lowFactor;
-  y = Math.floor(Math.random() * (highFactor - lowFactor + 1)) + lowFactor;
+  let x = Math.floor(Math.random() * (highFactor - lowFactor + 1)) + lowFactor;
+  let y = Math.floor(Math.random() * (highFactor - lowFactor + 1)) + lowFactor;
+  let factors = [x,y];
+  return factors;
 }
 
 function mistakeRecorder() {
